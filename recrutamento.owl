@@ -1,0 +1,1214 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/isph/recrutamento#"
+     xml:base="http://www.semanticweb.org/isph/recrutamento"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:rec="http://www.semanticweb.org/isph/recrutamento#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/isph/recrutamento">
+        <rdfs:comment xml:lang="pt">
+            Ontologia que modela o domínio de recrutamento e selecção de recursos humanos,
+            representando candidatos, vagas, empresas, competências, formações,
+            candidaturas e entrevistas, bem como as relações semânticas entre elas.
+        </rdfs:comment>
+        <rdfs:label xml:lang="pt">Ontologia de Recrutamento</rdfs:label>
+        <owl:versionInfo>1.0</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#dataHistorico -->
+
+    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/isph/recrutamento#dataHistorico"/>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#etapaHistorico -->
+
+    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/isph/recrutamento#etapaHistorico"/>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#etapaSeleção -->
+
+    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/isph/recrutamento#etapaSeleção"/>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#notaHistorico -->
+
+    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/isph/recrutamento#notaHistorico"/>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#temHistorico -->
+
+    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/isph/recrutamento#temHistorico"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/mbox -->
+
+    <owl:AnnotationProperty rdf:about="http://xmlns.com/foaf/0.1/mbox"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/name -->
+
+    <owl:AnnotationProperty rdf:about="http://xmlns.com/foaf/0.1/name"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#date"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#conduzEntrevista -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/isph/recrutamento#conduzEntrevista">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/isph/recrutamento#Recrutador"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/isph/recrutamento#Entrevista"/>
+        <rdfs:label xml:lang="pt">conduz entrevista</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#exige -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/isph/recrutamento#exige">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/isph/recrutamento#Empresa"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/isph/recrutamento#Competencia"/>
+        <rdfs:comment xml:lang="pt">Competências valorizadas genericamente pela empresa.</rdfs:comment>
+        <rdfs:label xml:lang="pt">exige</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#geraEntrevista -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/isph/recrutamento#geraEntrevista">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/isph/recrutamento#Candidatura"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/isph/recrutamento#Entrevista"/>
+        <rdfs:comment xml:lang="pt">Candidatura seleccionada que origina uma entrevista.</rdfs:comment>
+        <rdfs:label xml:lang="pt">gera entrevista</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#gereCandidatura -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/isph/recrutamento#gereCandidatura">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/isph/recrutamento#Recrutador"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/isph/recrutamento#Candidatura"/>
+        <rdfs:label xml:lang="pt">gere candidatura</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#isPublicadaPor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/isph/recrutamento#isPublicadaPor">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/isph/recrutamento#publica"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/isph/recrutamento#Vaga"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/isph/recrutamento#Empresa"/>
+        <rdfs:label xml:lang="pt">é publicada por</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#isSubmetidaPor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/isph/recrutamento#isSubmetidaPor">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/isph/recrutamento#submeteCandidatura"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/isph/recrutamento#Candidatura"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/isph/recrutamento#Candidato"/>
+        <rdfs:label xml:lang="pt">é submetida por</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#possuiCompetencia -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/isph/recrutamento#possuiCompetencia">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/isph/recrutamento#Candidato"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/isph/recrutamento#Competencia"/>
+        <rdfs:comment xml:lang="pt">Competências que o candidato demonstra ter.</rdfs:comment>
+        <rdfs:label xml:lang="pt">possui competência</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#possuiExperiencia -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/isph/recrutamento#possuiExperiencia">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/isph/recrutamento#Candidato"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/isph/recrutamento#ExperienciaProfissional"/>
+        <rdfs:comment xml:lang="pt">Hist?rico profissional associado a um candidato.</rdfs:comment>
+        <rdfs:label xml:lang="pt">possui experiencia</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#possuiFormacao -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/isph/recrutamento#possuiFormacao">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/isph/recrutamento#Candidato"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/isph/recrutamento#Formacao"/>
+        <rdfs:comment xml:lang="pt">Habilitações académicas ou profissionais do candidato.</rdfs:comment>
+        <rdfs:label xml:lang="pt">possui formação</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#publica -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/isph/recrutamento#publica">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/isph/recrutamento#Empresa"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/isph/recrutamento#Vaga"/>
+        <rdfs:comment xml:lang="pt">Relaciona uma empresa com as vagas que ela disponibiliza.</rdfs:comment>
+        <rdfs:label xml:lang="pt">publica</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#refereVaga -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/isph/recrutamento#refereVaga">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/isph/recrutamento#Candidatura"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/isph/recrutamento#Vaga"/>
+        <rdfs:comment xml:lang="pt">Vaga à qual a candidatura se refere.</rdfs:comment>
+        <rdfs:label xml:lang="pt">refere vaga</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#requerCompetencia -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/isph/recrutamento#requerCompetencia">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/isph/recrutamento#Vaga"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/isph/recrutamento#Competencia"/>
+        <rdfs:comment xml:lang="pt">Competências obrigatórias ou desejáveis para uma vaga.</rdfs:comment>
+        <rdfs:label xml:lang="pt">requer competência</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#requerExperienciaMinima -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/isph/recrutamento#requerExperienciaMinima">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/isph/recrutamento#Vaga"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/isph/recrutamento#ExperienciaProfissional"/>
+        <rdfs:comment xml:lang="pt">Experiencia profissional m?nima esperada para uma vaga.</rdfs:comment>
+        <rdfs:label xml:lang="pt">requer experiencia minima</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#requerFormacao -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/isph/recrutamento#requerFormacao">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/isph/recrutamento#Vaga"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/isph/recrutamento#Formacao"/>
+        <rdfs:comment xml:lang="pt">Formação mínima exigida para a vaga.</rdfs:comment>
+        <rdfs:label xml:lang="pt">requer formação</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#submeteCandidatura -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/isph/recrutamento#submeteCandidatura">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/isph/recrutamento#Candidato"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/isph/recrutamento#Candidatura"/>
+        <rdfs:comment xml:lang="pt">Acção do candidato de submeter uma candidatura a uma vaga.</rdfs:comment>
+        <rdfs:label xml:lang="pt">submete candidatura</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#trabalhaEm -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/isph/recrutamento#trabalhaEm">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/isph/recrutamento#Recrutador"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/isph/recrutamento#Empresa"/>
+        <rdfs:comment>Local de trabalho (Empresa)</rdfs:comment>
+        <rdfs:label>trabalhaEm</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#anoConclusao -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/isph/recrutamento#anoConclusao">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/isph/recrutamento#Formacao"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:label xml:lang="pt">ano de conclusão</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#anoExperiencia -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/isph/recrutamento#anoExperiencia">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/isph/recrutamento#Candidato"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:label xml:lang="pt">anos de experiência</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#anosExperiencia -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/isph/recrutamento#anosExperiencia">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/isph/recrutamento#ExperienciaProfissional"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:label xml:lang="pt">anos de experi?ncia</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#areaFormacao -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/isph/recrutamento#areaFormacao">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/isph/recrutamento#Formacao"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="pt">área de formação</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#cargoExperiencia -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/isph/recrutamento#cargoExperiencia">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/isph/recrutamento#ExperienciaProfissional"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="pt">cargo</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#categoriaCompetencia -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/isph/recrutamento#categoriaCompetencia">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/isph/recrutamento#Competencia"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="pt">categoria</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#dataCandidatura -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/isph/recrutamento#dataCandidatura">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/isph/recrutamento#Candidatura"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+        <rdfs:label xml:lang="pt">data de submissão</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#dataEntrevista -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/isph/recrutamento#dataEntrevista">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/isph/recrutamento#Entrevista"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:label xml:lang="pt">data e hora</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#dataFimExperiencia -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/isph/recrutamento#dataFimExperiencia">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/isph/recrutamento#ExperienciaProfissional"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+        <rdfs:label xml:lang="pt">data de fim</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#dataInicioExperiencia -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/isph/recrutamento#dataInicioExperiencia">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/isph/recrutamento#ExperienciaProfissional"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+        <rdfs:label xml:lang="pt">data de inicio</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#dataPublicacao -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/isph/recrutamento#dataPublicacao">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/isph/recrutamento#Vaga"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+        <rdfs:label xml:lang="pt">data de publicação</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#descricaoVaga -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/isph/recrutamento#descricaoVaga">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/isph/recrutamento#Vaga"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="pt">descrição</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#email -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/isph/recrutamento#email">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#empresaExperiencia -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/isph/recrutamento#empresaExperiencia">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/isph/recrutamento#ExperienciaProfissional"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="pt">empresa da experi?ncia</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#estadoCandidatura -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/isph/recrutamento#estadoCandidatura">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/isph/recrutamento#Candidatura"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="pt">Valores: Em análise, Aprovada, Rejeitada, Em entrevista, Contratado</rdfs:comment>
+        <rdfs:label xml:lang="pt">estado</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#grauFormacao -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/isph/recrutamento#grauFormacao">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/isph/recrutamento#Formacao"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="pt">Ex: Licenciatura, Mestrado, Doutoramento, Certificação</rdfs:comment>
+        <rdfs:label xml:lang="pt">grau</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#instituicao -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/isph/recrutamento#instituicao">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/isph/recrutamento#Formacao"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="pt">instituição</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#localVaga -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/isph/recrutamento#localVaga">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/isph/recrutamento#Vaga"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="pt">local de trabalho</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#localizacaoEmpresa -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/isph/recrutamento#localizacaoEmpresa">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/isph/recrutamento#Empresa"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="pt">localização</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#modalidade -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/isph/recrutamento#modalidade">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/isph/recrutamento#Vaga"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="pt">modalidade (presencial/remoto/híbrido)</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#nivelCompetencia -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/isph/recrutamento#nivelCompetencia">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/isph/recrutamento#Competencia"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="pt">Valores: Básico, Intermédio, Avançado, Especialista</rdfs:comment>
+        <rdfs:label xml:lang="pt">nível</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#nomeCompetencia -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/isph/recrutamento#nomeCompetencia">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/isph/recrutamento#Competencia"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="pt">nome da competência</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#nomeCompleto -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/isph/recrutamento#nomeCompleto">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="pt">nome completo</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#nomeEmpresa -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/isph/recrutamento#nomeEmpresa">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/isph/recrutamento#Empresa"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="pt">nome da empresa</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#pontuacaoMatch -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/isph/recrutamento#pontuacaoMatch">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/isph/recrutamento#Candidatura"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment xml:lang="pt">Pontuação de compatibilidade semântica entre candidato e vaga (0.0 a 1.0).</rdfs:comment>
+        <rdfs:label xml:lang="pt">pontuação de compatibilidade</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#referenciaESCO -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/isph/recrutamento#referenciaESCO">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/isph/recrutamento#Competencia"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+        <rdfs:comment xml:lang="pt">URI real da taxonomia ESCO associado ? compet?ncia.</rdfs:comment>
+        <rdfs:label xml:lang="pt">refer?ncia ESCO</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#resultadoEntrevista -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/isph/recrutamento#resultadoEntrevista">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/isph/recrutamento#Entrevista"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="pt">Valores: Aprovado, Reprovado, Pendente</rdfs:comment>
+        <rdfs:label xml:lang="pt">resultado</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#salario -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/isph/recrutamento#salario">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/isph/recrutamento#Vaga"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:label xml:lang="pt">salário (AOA)</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#sector -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/isph/recrutamento#sector">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/isph/recrutamento#Empresa"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="pt">sector de actividade</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#telefone -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/isph/recrutamento#telefone">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="pt">telefone</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#tipoEntrevista -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/isph/recrutamento#tipoEntrevista">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/isph/recrutamento#Entrevista"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="pt">Valores: Técnica, Comportamental, RH, Painel</rdfs:comment>
+        <rdfs:label xml:lang="pt">tipo</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#tituloVaga -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/isph/recrutamento#tituloVaga">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/isph/recrutamento#Vaga"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="pt">título da vaga</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#Candidato -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/isph/recrutamento#Candidato">
+        <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/isph/recrutamento#possuiFormacao"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/isph/recrutamento#Formacao"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/isph/recrutamento#Recrutador"/>
+        <rdfs:comment xml:lang="pt">
+            Pessoa que se candidata a uma ou mais vagas de emprego.
+            Possui competências, formações académicas e pode submeter candidaturas.
+        </rdfs:comment>
+        <rdfs:label xml:lang="pt">Candidato</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#Candidatura -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/isph/recrutamento#Candidatura">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/isph/recrutamento#refereVaga"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/isph/recrutamento#Vaga"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="pt">
+            Acção de um candidato de se candidatar a uma vaga específica,
+            com estado e pontuação associados ao processo de selecção.
+        </rdfs:comment>
+        <rdfs:label xml:lang="pt">Candidatura</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#Competencia -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/isph/recrutamento#Competencia">
+        <rdfs:comment xml:lang="pt">
+            Habilidade técnica ou comportamental que um candidato pode possuir
+            e que uma vaga pode requerer.
+        </rdfs:comment>
+        <rdfs:label xml:lang="pt">Competência</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#CompetenciaComportamental -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/isph/recrutamento#CompetenciaComportamental">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/isph/recrutamento#Competencia"/>
+        <rdfs:comment xml:lang="pt">
+            Competência de natureza interpessoal ou comportamental (ex: liderança, comunicação).
+        </rdfs:comment>
+        <rdfs:label xml:lang="pt">Competência Comportamental</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#CompetenciaTecnica -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/isph/recrutamento#CompetenciaTecnica">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/isph/recrutamento#Competencia"/>
+        <rdfs:comment xml:lang="pt">
+            Competência de natureza técnica ou tecnológica (ex: programação, gestão de bases de dados).
+        </rdfs:comment>
+        <rdfs:label xml:lang="pt">Competência Técnica</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#Empresa -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/isph/recrutamento#Empresa">
+        <rdfs:comment xml:lang="pt">
+            Organização que publica vagas de emprego e conduz processos de recrutamento.
+        </rdfs:comment>
+        <rdfs:label xml:lang="pt">Empresa</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#Entrevista -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/isph/recrutamento#Entrevista">
+        <rdfs:comment xml:lang="pt">
+            Encontro formal entre candidato e empresa no âmbito de uma candidatura.
+        </rdfs:comment>
+        <rdfs:label xml:lang="pt">Entrevista</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#EntrevistaPresencial -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/isph/recrutamento#EntrevistaPresencial">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/isph/recrutamento#Entrevista"/>
+        <rdfs:label xml:lang="pt">Entrevista Presencial</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#EntrevistaRemota -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/isph/recrutamento#EntrevistaRemota">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/isph/recrutamento#Entrevista"/>
+        <rdfs:label xml:lang="pt">Entrevista Remota</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#ExperienciaProfissional -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/isph/recrutamento#ExperienciaProfissional">
+        <rdfs:comment xml:lang="pt">Registo reificado de experiencia profissional de um candidato ou requisito m?nimo de uma vaga.</rdfs:comment>
+        <rdfs:label xml:lang="pt">Experiencia Profissional</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#Formacao -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/isph/recrutamento#Formacao">
+        <rdfs:comment xml:lang="pt">
+            Habilitação académica ou profissional obtida por um candidato.
+        </rdfs:comment>
+        <rdfs:label xml:lang="pt">Formação</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#FormacaoAcademica -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/isph/recrutamento#FormacaoAcademica">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/isph/recrutamento#Formacao"/>
+        <rdfs:comment xml:lang="pt">Formação obtida em instituição de ensino (Licenciatura, Mestrado, Doutoramento).</rdfs:comment>
+        <rdfs:label xml:lang="pt">Formação Académica</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#FormacaoProfissional -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/isph/recrutamento#FormacaoProfissional">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/isph/recrutamento#Formacao"/>
+        <rdfs:comment xml:lang="pt">Formação prática ou certificação profissional obtida fora do ensino formal.</rdfs:comment>
+        <rdfs:label xml:lang="pt">Formação Profissional</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#Recrutador -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/isph/recrutamento#Recrutador">
+        <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/isph/recrutamento#trabalhaEm"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/isph/recrutamento#Empresa"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="pt">
+            Profissional responsável pela gestão do processo de recrutamento numa empresa.
+        </rdfs:comment>
+        <rdfs:label xml:lang="pt">Recrutador</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#Vaga -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/isph/recrutamento#Vaga">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/isph/recrutamento#isPublicadaPor"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/isph/recrutamento#Empresa"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="pt">
+            Posto de trabalho disponível numa empresa, com requisitos de competências
+            e formação definidos.
+        </rdfs:comment>
+        <rdfs:label xml:lang="pt">Vaga</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Person -->
+
+    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Person"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#Cand_385fb859 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/isph/recrutamento#Cand_385fb859">
+        <isSubmetidaPor rdf:resource="http://www.semanticweb.org/isph/recrutamento#Candidato_MauroLucunde_110467"/>
+        <refereVaga rdf:resource="http://www.semanticweb.org/isph/recrutamento#Vaga_DevBackend"/>
+        <dataCandidatura rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-06-16</dataCandidatura>
+        <estadoCandidatura>Em análise</estadoCandidatura>
+        <pontuacaoMatch rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.5</pontuacaoMatch>
+        <etapaSeleção>Triagem</etapaSeleção>
+        <temHistorico rdf:resource="http://www.semanticweb.org/isph/recrutamento#Hist_78abb8ff"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#Cand_46141677 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/isph/recrutamento#Cand_46141677">
+        <rdf:type rdf:resource="http://www.semanticweb.org/isph/recrutamento#Candidatura"/>
+        <isSubmetidaPor rdf:resource="http://www.semanticweb.org/isph/recrutamento#Candidato_ManuelAlfredo"/>
+        <refereVaga rdf:resource="http://www.semanticweb.org/isph/recrutamento#Vaga_DevBackend"/>
+        <dataCandidatura rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-06-15</dataCandidatura>
+        <estadoCandidatura>Em análise</estadoCandidatura>
+        <pontuacaoMatch rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.5</pontuacaoMatch>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#Cand_ManuelAnalista -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/isph/recrutamento#Cand_ManuelAnalista">
+        <rdf:type rdf:resource="http://www.semanticweb.org/isph/recrutamento#Candidatura"/>
+        <geraEntrevista rdf:resource="http://www.semanticweb.org/isph/recrutamento#Entrev_Manuel_BIC"/>
+        <isSubmetidaPor rdf:resource="http://www.semanticweb.org/isph/recrutamento#Candidato_ManuelAlfredo"/>
+        <refereVaga rdf:resource="http://www.semanticweb.org/isph/recrutamento#Vaga_AnalistaSistemas"/>
+        <dataCandidatura rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-06-08</dataCandidatura>
+        <estadoCandidatura>Em entrevista</estadoCandidatura>
+        <pontuacaoMatch rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.87</pontuacaoMatch>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#Cand_NunesDevBackend -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/isph/recrutamento#Cand_NunesDevBackend">
+        <rdf:type rdf:resource="http://www.semanticweb.org/isph/recrutamento#Candidatura"/>
+        <isSubmetidaPor rdf:resource="http://www.semanticweb.org/isph/recrutamento#Candidato_NunesNdala"/>
+        <refereVaga rdf:resource="http://www.semanticweb.org/isph/recrutamento#Vaga_DevBackend"/>
+        <dataCandidatura rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-06-10</dataCandidatura>
+        <estadoCandidatura>Em análise</estadoCandidatura>
+        <pontuacaoMatch rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.92</pontuacaoMatch>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#Candidato_ManuelAlfredo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/isph/recrutamento#Candidato_ManuelAlfredo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/isph/recrutamento#Candidato"/>
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <possuiCompetencia rdf:resource="http://www.semanticweb.org/isph/recrutamento#Comp_Java"/>
+        <possuiCompetencia rdf:resource="http://www.semanticweb.org/isph/recrutamento#Comp_Lideranca"/>
+        <possuiCompetencia rdf:resource="http://www.semanticweb.org/isph/recrutamento#Comp_Python"/>
+        <possuiExperiencia rdf:resource="http://www.semanticweb.org/isph/recrutamento#Exp_ManuelAnalistaSistemas"/>
+        <possuiFormacao rdf:resource="http://www.semanticweb.org/isph/recrutamento#Form_LicenciaturaInformatica"/>
+        <submeteCandidatura rdf:resource="http://www.semanticweb.org/isph/recrutamento#Cand_46141677"/>
+        <submeteCandidatura rdf:resource="http://www.semanticweb.org/isph/recrutamento#Cand_ManuelAnalista"/>
+        <anoExperiencia rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</anoExperiencia>
+        <email>manuel.tchalocano@exemplo.ao</email>
+        <nomeCompleto>Manuel Alfredo Tchalocano</nomeCompleto>
+        <telefone>+244 923 000 002</telefone>
+        <email rdf:resource="mailto:manuel.tchalocano@exemplo.ao"/>
+        <foaf:mbox rdf:resource="mailto:manuel.tchalocano@exemplo.ao"/>
+        <foaf:mbox>manuel.tchalocano@exemplo.ao</foaf:mbox>
+        <foaf:name>Manuel Alfredo Tchalocano</foaf:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#Candidato_MauroLucunde_110467 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/isph/recrutamento#Candidato_MauroLucunde_110467">
+        <possuiCompetencia rdf:resource="http://www.semanticweb.org/isph/recrutamento#Comp_Python"/>
+        <possuiExperiencia rdf:resource="http://www.semanticweb.org/isph/recrutamento#Exp_c145b871"/>
+        <possuiFormacao rdf:resource="http://www.semanticweb.org/isph/recrutamento#Form_bcd0e016"/>
+        <submeteCandidatura rdf:resource="http://www.semanticweb.org/isph/recrutamento#Cand_385fb859"/>
+        <anoExperiencia rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</anoExperiencia>
+        <email>mauro@gmail.com</email>
+        <nomeCompleto>Mauro Lucunde</nomeCompleto>
+        <telefone>+244 922849001</telefone>
+        <email rdf:resource="mailto:mauro@gmail.com"/>
+        <foaf:mbox rdf:resource="mailto:mauro@gmail.com"/>
+        <foaf:mbox>mauro@gmail.com</foaf:mbox>
+        <foaf:name>Mauro Lucunde</foaf:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#Candidato_NunesNdala -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/isph/recrutamento#Candidato_NunesNdala">
+        <rdf:type rdf:resource="http://www.semanticweb.org/isph/recrutamento#Candidato"/>
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <possuiCompetencia rdf:resource="http://www.semanticweb.org/isph/recrutamento#Comp_Comunicacao"/>
+        <possuiCompetencia rdf:resource="http://www.semanticweb.org/isph/recrutamento#Comp_Java"/>
+        <possuiCompetencia rdf:resource="http://www.semanticweb.org/isph/recrutamento#Comp_Python"/>
+        <possuiCompetencia rdf:resource="http://www.semanticweb.org/isph/recrutamento#Comp_SQL"/>
+        <possuiExperiencia rdf:resource="http://www.semanticweb.org/isph/recrutamento#Exp_NunesBackendPython"/>
+        <possuiFormacao rdf:resource="http://www.semanticweb.org/isph/recrutamento#Form_LicenciaturaInformatica"/>
+        <submeteCandidatura rdf:resource="http://www.semanticweb.org/isph/recrutamento#Cand_NunesDevBackend"/>
+        <anoExperiencia rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</anoExperiencia>
+        <email>nunes.samba@exemplo.ao</email>
+        <nomeCompleto>Nunes Ndala Samba</nomeCompleto>
+        <telefone>+244 923 000 001</telefone>
+        <email rdf:resource="mailto:nunes.samba@exemplo.ao"/>
+        <foaf:mbox rdf:resource="mailto:nunes.samba@exemplo.ao"/>
+        <foaf:mbox>nunes.samba@exemplo.ao</foaf:mbox>
+        <foaf:name>Nunes Ndala Samba</foaf:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#Comp_Comunicacao -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/isph/recrutamento#Comp_Comunicacao">
+        <rdf:type rdf:resource="http://www.semanticweb.org/isph/recrutamento#CompetenciaComportamental"/>
+        <categoriaCompetencia>Soft Skill</categoriaCompetencia>
+        <nivelCompetencia>Avançado</nivelCompetencia>
+        <nomeCompetencia>Comunicação</nomeCompetencia>
+        <referenciaESCO rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://data.europa.eu/esco/skill/15d76317-c71a-4fa2-aadc-2ecc34e627b7</referenciaESCO>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#Comp_Java -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/isph/recrutamento#Comp_Java">
+        <rdf:type rdf:resource="http://www.semanticweb.org/isph/recrutamento#CompetenciaTecnica"/>
+        <categoriaCompetencia>Linguagem de Programação</categoriaCompetencia>
+        <nivelCompetencia>Avançado</nivelCompetencia>
+        <nomeCompetencia>Java</nomeCompetencia>
+        <referenciaESCO rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://data.europa.eu/esco/skill/19a8293b-8e95-4de3-983f-77484079c389</referenciaESCO>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#Comp_Lideranca -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/isph/recrutamento#Comp_Lideranca">
+        <rdf:type rdf:resource="http://www.semanticweb.org/isph/recrutamento#CompetenciaComportamental"/>
+        <categoriaCompetencia>Soft Skill</categoriaCompetencia>
+        <nivelCompetencia>Intermédio</nivelCompetencia>
+        <nomeCompetencia>Liderança</nomeCompetencia>
+        <referenciaESCO rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://data.europa.eu/esco/skill/0fc0cb61-f44d-4fd0-afd1-18506380b55e</referenciaESCO>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#Comp_Python -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/isph/recrutamento#Comp_Python">
+        <rdf:type rdf:resource="http://www.semanticweb.org/isph/recrutamento#CompetenciaTecnica"/>
+        <categoriaCompetencia>Linguagem de Programação</categoriaCompetencia>
+        <nivelCompetencia>Avançado</nivelCompetencia>
+        <nomeCompetencia>Python</nomeCompetencia>
+        <referenciaESCO rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://data.europa.eu/esco/skill/ccd0a1d9-afda-43d9-b901-96344886e14d</referenciaESCO>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#Comp_SQL -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/isph/recrutamento#Comp_SQL">
+        <rdf:type rdf:resource="http://www.semanticweb.org/isph/recrutamento#CompetenciaTecnica"/>
+        <categoriaCompetencia>Bases de Dados</categoriaCompetencia>
+        <nivelCompetencia>Intermédio</nivelCompetencia>
+        <nomeCompetencia>SQL</nomeCompetencia>
+        <referenciaESCO rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://data.europa.eu/esco/skill/598de5b0-5b58-4ea7-8058-a4bc4d18c742</referenciaESCO>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#Empresa_BancoBIC -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/isph/recrutamento#Empresa_BancoBIC">
+        <rdf:type rdf:resource="http://www.semanticweb.org/isph/recrutamento#Empresa"/>
+        <publica rdf:resource="http://www.semanticweb.org/isph/recrutamento#Vaga_AnalistaSistemas"/>
+        <localizacaoEmpresa>Lubango, Huíla</localizacaoEmpresa>
+        <nomeEmpresa>Banco BIC</nomeEmpresa>
+        <sector>Banca e Finanças</sector>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#Empresa_TechAngola -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/isph/recrutamento#Empresa_TechAngola">
+        <rdf:type rdf:resource="http://www.semanticweb.org/isph/recrutamento#Empresa"/>
+        <publica rdf:resource="http://www.semanticweb.org/isph/recrutamento#Vaga_DevBackend"/>
+        <localizacaoEmpresa>Luanda, Angola</localizacaoEmpresa>
+        <nomeEmpresa>TechAngola Lda.</nomeEmpresa>
+        <sector>Tecnologias de Informação</sector>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#Entrev_Manuel_BIC -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/isph/recrutamento#Entrev_Manuel_BIC">
+        <rdf:type rdf:resource="http://www.semanticweb.org/isph/recrutamento#EntrevistaPresencial"/>
+        <dataEntrevista rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-06-15T10:00:00</dataEntrevista>
+        <resultadoEntrevista>Aprovado</resultadoEntrevista>
+        <tipoEntrevista>Técnica</tipoEntrevista>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#ExpMin_AnalistaSistemas -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/isph/recrutamento#ExpMin_AnalistaSistemas">
+        <rdf:type rdf:resource="http://www.semanticweb.org/isph/recrutamento#ExperienciaProfissional"/>
+        <anosExperiencia rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3</anosExperiencia>
+        <cargoExperiencia>Analista de Sistemas</cargoExperiencia>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#ExpMin_DevBackend -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/isph/recrutamento#ExpMin_DevBackend">
+        <rdf:type rdf:resource="http://www.semanticweb.org/isph/recrutamento#ExperienciaProfissional"/>
+        <anosExperiencia rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2</anosExperiencia>
+        <cargoExperiencia>Desenvolvedor Backend Python</cargoExperiencia>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#Exp_ManuelAnalistaSistemas -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/isph/recrutamento#Exp_ManuelAnalistaSistemas">
+        <rdf:type rdf:resource="http://www.semanticweb.org/isph/recrutamento#ExperienciaProfissional"/>
+        <anosExperiencia rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3</anosExperiencia>
+        <cargoExperiencia>Analista de Sistemas Júnior</cargoExperiencia>
+        <dataFimExperiencia rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-01-01</dataFimExperiencia>
+        <dataInicioExperiencia rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-01-01</dataInicioExperiencia>
+        <empresaExperiencia>Banco BIC</empresaExperiencia>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#Exp_NunesBackendPython -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/isph/recrutamento#Exp_NunesBackendPython">
+        <rdf:type rdf:resource="http://www.semanticweb.org/isph/recrutamento#ExperienciaProfissional"/>
+        <anosExperiencia rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2</anosExperiencia>
+        <cargoExperiencia>Desenvolvedor Backend Python</cargoExperiencia>
+        <dataFimExperiencia rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-12-31</dataFimExperiencia>
+        <dataInicioExperiencia rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-01-01</dataInicioExperiencia>
+        <empresaExperiencia>TechAngola Lda.</empresaExperiencia>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#Exp_c145b871 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/isph/recrutamento#Exp_c145b871">
+        <anosExperiencia rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.0</anosExperiencia>
+        <cargoExperiencia>Estudante</cargoExperiencia>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#Form_LicenciaturaInformatica -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/isph/recrutamento#Form_LicenciaturaInformatica">
+        <rdf:type rdf:resource="http://www.semanticweb.org/isph/recrutamento#FormacaoAcademica"/>
+        <anoConclusao rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2025</anoConclusao>
+        <areaFormacao>Engenharia Informática</areaFormacao>
+        <grauFormacao>Licenciatura</grauFormacao>
+        <instituicao>Instituto Superior Politécnico da Huíla</instituicao>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#Form_MestradoGestao -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/isph/recrutamento#Form_MestradoGestao">
+        <rdf:type rdf:resource="http://www.semanticweb.org/isph/recrutamento#FormacaoAcademica"/>
+        <anoConclusao rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2023</anoConclusao>
+        <areaFormacao>Gestão de Empresas</areaFormacao>
+        <grauFormacao>Mestrado</grauFormacao>
+        <instituicao>Universidade Agostinho Neto</instituicao>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#Form_bcd0e016 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/isph/recrutamento#Form_bcd0e016">
+        <areaFormacao>Computação</areaFormacao>
+        <grauFormacao>Licenciatura</grauFormacao>
+        <instituicao>ISPH</instituicao>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#Recrutador_AnaSilva -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/isph/recrutamento#Recrutador_AnaSilva">
+        <rdf:type rdf:resource="http://www.semanticweb.org/isph/recrutamento#Recrutador"/>
+        <trabalhaEm rdf:resource="http://www.semanticweb.org/isph/recrutamento#Empresa_TechAngola"/>
+        <email>ana.silva@techangola.ao</email>
+        <nomeCompleto>Ana Silva</nomeCompleto>
+        <telefone>+244 912 345 678</telefone>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#Vaga_AnalistaSistemas -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/isph/recrutamento#Vaga_AnalistaSistemas">
+        <rdf:type rdf:resource="http://www.semanticweb.org/isph/recrutamento#Vaga"/>
+        <isPublicadaPor rdf:resource="http://www.semanticweb.org/isph/recrutamento#Empresa_BancoBIC"/>
+        <requerCompetencia rdf:resource="http://www.semanticweb.org/isph/recrutamento#Comp_Java"/>
+        <requerCompetencia rdf:resource="http://www.semanticweb.org/isph/recrutamento#Comp_Lideranca"/>
+        <requerCompetencia rdf:resource="http://www.semanticweb.org/isph/recrutamento#Comp_SQL"/>
+        <requerExperienciaMinima rdf:resource="http://www.semanticweb.org/isph/recrutamento#ExpMin_AnalistaSistemas"/>
+        <requerFormacao rdf:resource="http://www.semanticweb.org/isph/recrutamento#Form_LicenciaturaInformatica"/>
+        <dataPublicacao rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-05-20</dataPublicacao>
+        <descricaoVaga>Análise e modelação de sistemas de informação bancários.</descricaoVaga>
+        <localVaga>Lubango</localVaga>
+        <modalidade>Presencial</modalidade>
+        <salario rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">420000</salario>
+        <tituloVaga>Analista de Sistemas</tituloVaga>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/isph/recrutamento#Vaga_DevBackend -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/isph/recrutamento#Vaga_DevBackend">
+        <rdf:type rdf:resource="http://www.semanticweb.org/isph/recrutamento#Vaga"/>
+        <isPublicadaPor rdf:resource="http://www.semanticweb.org/isph/recrutamento#Empresa_TechAngola"/>
+        <requerCompetencia rdf:resource="http://www.semanticweb.org/isph/recrutamento#Comp_Python"/>
+        <requerCompetencia rdf:resource="http://www.semanticweb.org/isph/recrutamento#Comp_SQL"/>
+        <requerExperienciaMinima rdf:resource="http://www.semanticweb.org/isph/recrutamento#ExpMin_DevBackend"/>
+        <requerFormacao rdf:resource="http://www.semanticweb.org/isph/recrutamento#Form_LicenciaturaInformatica"/>
+        <dataPublicacao rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-06-01</dataPublicacao>
+        <descricaoVaga>Desenvolvimento de APIs REST em Python/Flask para sistemas financeiros.</descricaoVaga>
+        <localVaga>Luanda</localVaga>
+        <modalidade>Híbrido</modalidade>
+        <salario rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">350000</salario>
+        <tituloVaga>Desenvolvedor Backend Python</tituloVaga>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/isph/recrutamento#Hist_78abb8ff">
+        <dataHistorico>2026-06-16 21:39</dataHistorico>
+        <etapaHistorico>Triagem</etapaHistorico>
+        <notaHistorico>Candidatura submetida</notaHistorico>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/isph/recrutamento#email">
+        <rdfs:label xml:lang="pt">email</rdfs:label>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
